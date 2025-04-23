@@ -1,0 +1,72 @@
+[
+  {
+    "kurum_kodu": "1001",
+    "kurum_adi": "Örnek Sürücü Kursu 1",
+    "adres": "Mahalle 1. Cadde No:1, Şehir",
+    "telefon": "+90 555 000 1001",
+    "website": "https://www.ornekkursu1.com"
+  },
+  {
+    "kurum_kodu": "1002",
+    "kurum_adi": "Örnek Sürücü Kursu 2",
+    "adres": "Mahalle 2. Cadde No:2, Şehir",
+    "telefon": "+90 555 000 1002",
+    "website": ""
+  },
+  {
+    "kurum_kodu": "1003",
+    "kurum_adi": "Örnek Sürücü Kursu 3",
+    "adres": "Mahalle 3. Cadde No:3, Şehir",
+    "telefon": "+90 555 000 1003",
+    "website": "https://www.ornekkursu3.com"
+  },
+  {
+    "kurum_kodu": "1004",
+    "kurum_adi": "Örnek Sürücü Kursu 4",
+    "adres": "Mahalle 4. Cadde No:4, Şehir",
+    "telefon": "+90 555 000 1004",
+    "website": ""
+  },
+  {
+    "kurum_kodu": "1005",
+    "kurum_adi": "Örnek Sürücü Kursu 5",
+    "adres": "Mahalle 5. Cadde No:5, Şehir",
+    "telefon": "+90 555 000 1005",
+    "website": "https://www.ornekkursu5.com"
+  },
+  {
+    "kurum_kodu": "1006",
+    "kurum_adi": "Örnek Sürücü Kursu 6",
+    "adres": "Mahalle 6. Cadde No:6, Şehir",
+    "telefon": "+90 555 000 1006",
+    "website": ""
+  },
+  {
+    "kurum_kodu": "1007",
+    "kurum_adi": "Örnek Sürücü Kursu 7",
+    "adres": "Mahalle 7. Cadde No:7, Şehir",
+    "telefon": "+90 555 000 1007",
+    "website": "https://www.ornekkursu7.com"
+  },
+  {
+    "kurum_kodu": "1008",
+    "kurum_adi": "Örnek Sürücü Kursu 8",
+    "adres": "Mahalle 8. Cadde No:8, Şehir",
+    "telefon": "+90 555 000 1008",
+    "website": ""
+  },
+  {
+    "kurum_kodu": "1009",
+    "kurum_adi": "Örnek Sürücü Kursu 9",
+    "adres": "Mahalle 9. Cadde No:9, Şehir",
+    "telefon": "+90 555 000 1009",
+    "website": "https://www.ornekkursu9.com"
+  },
+  {
+    "kurum_kodu": "1010",
+    "kurum_adi": "Örnek Sürücü Kursu 10",
+    "adres": "Mahalle 10. Cadde No:10, Şehir",
+    "telefon": "+90 555 000 1010",
+    "website": ""
+  }
+]

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title id="page-title">Kurum Bilgisi</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    .container { max-width: 600px; margin: auto; }
+    h1 { margin-bottom: 0.5em; }
+    .notfound { color: #a00; }
+    a { color: #06c; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="content">
+      <p>Yükleniyor…</p>
+    </div>
+  </div>
+
+  <script>
+    // 1) JSON’u yükle
+    fetch('/kurumlar.json')
+      .then(r => r.json())
+      .then(data => {
+        const content = document.getElementById('content');
+        // 2) URL’den kodu al (örnek: /1234 => "1234", ya da ?k=1234)
+        let kod = null;
+        const path = location.pathname.replace(/^\/+|\/+$/g, '');
+        if (path) kod = path;
+        else {
+          const params = new URLSearchParams(location.search);
+          kod = params.get('k');
+        }
+
+        if (!kod) {
+          // Anasayfa içeriği
+          document.getElementById('page-title').textContent = 'Hoş geldiniz';
+          content.innerHTML = `
+            <h1>abc.com</h1>
+            <p>Lütfen bir kurum kodu parametresiyle sayfayı açın.<br>
+               Örneğin: <code>https://abc.com/1001</code></p>`;
+          return;
+        }
+
+        // 3) JSON içinden kurumu bul
+        const kurum = data.find(item => item.kurum_kodu === kod);
+        if (!kurum) {
+          document.getElementById('page-title').textContent = 'Kurum Bulunamadı';
+          content.innerHTML = `
+            <h1 class="notfound">Kurum Bulunamadı</h1>
+            <p>Geçersiz kod: <strong>${kod}</strong></p>`;
+          return;
+        }
+
+        // 4) Şablonla doldur
+        document.getElementById('page-title').textContent = `${kurum.kurum_adi}`;
+        content.innerHTML = `
+          <h1>${kurum.kurum_adi}</h1>
+          <p><strong>Kod:</strong> ${kurum.kurum_kodu}</p>
+          <p><strong>Adres:</strong> ${kurum.adres}</p>
+          <p><strong>Telefon:</strong> ${kurum.telefon}</p>
+          ${kurum.website
+            ? `<p><strong>Web:</strong> <a href="${kurum.website}" target="_blank">${kurum.website}</a></p>`
+            : `<p><em>Web sitesi bulunmuyor.</em></p>`
+          }
+        `;
+      })
+      .catch(err => {
+        document.getElementById('content').innerHTML = `<p class="notfound">Veri yüklenemedi.</p>`;
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
